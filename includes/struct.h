@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adylewsk <adylewsk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 19:56:11 by adylewsk          #+#    #+#             */
-/*   Updated: 2021/06/03 19:01:17 by adylewsk         ###   ########.fr       */
+/*   Created: 2021/06/03 17:14:55 by adylewsk          #+#    #+#             */
+/*   Updated: 2021/06/03 19:02:56 by adylewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#ifndef STRUCT_H
+# define STRUCT_H
 
-# include <sys/types.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <string.h>
-# include <fcntl.h>
-# include <errno.h>
-# include <limits.h>
-# include "../libft/libft.h"
+typedef struct s_list
+{
+	s_list	*prev;
+	int		nbr;
+	s_list	*next;
 
-int	check_args(int ac, char **av);
+}	t_list;
 
 #endif

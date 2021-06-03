@@ -41,7 +41,7 @@ $(DIR_BUILD):
 
 $(NAME) : $(OBJS)
 	@$(CC) $(CFLAGS) $^ -o $@ -L libft -lft
-	@echo "$(Green)$@ Created$(End)"
+	@echo "$(Green)MAKE ->$@$(End)"
 
 $(LIBFT):
 	@make -C libft/
@@ -55,18 +55,26 @@ $(OBJS): $(DIR_BUILD)%.o: %.c
 start:
 	@echo "$(Green)__________$(NAME)____________$(End)"
 
-clean:
+lclean:
 	@make -C libft clean
-	@rm -rf $(DIR_BUILD)
-	@echo "$(Red)REMOVE\033[5C->\033[5C$(DIR_BUILD)$(End)"
 
-fclean:
+lfclean:
 	@make -C libft fclean
-	@rm -rf $(DIR_BUILD)
-	@rm -rf $(NAME)
-	@echo "$(Red)REMOVE\033[5C->\033[5C$(DIR_BUILD)$(End)"
-	@echo "$(Red)REMOVE\033[5C->\033[5C$(NAME)$(End)"
 
-re: fclean all
+lre:
+	@make -C libft re
+
+mclean:
+	@rm -rf $(DIR_BUILD)
+	@echo "$(Red)REMOVE\033[5C->\033[5C$(DIR_BUILD)$(End)"
+
+mfclean: mclean
+	@rm -rf $(NAME)
+	@echo "$(Red)$(test)REMOVE\033[5C->\033[5C$(NAME) $$? $(End)"
+clean: lclean mclean
+
+fclean: lfclean mfclean
+
+re: lre mfclean all
 
 .PHONY: all clean fclean re

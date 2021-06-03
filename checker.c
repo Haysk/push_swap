@@ -6,13 +6,13 @@
 /*   By: adylewsk <adylewsk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 20:19:46 by adylewsk          #+#    #+#             */
-/*   Updated: 2021/06/01 20:39:20 by adylewsk         ###   ########.fr       */
+/*   Updated: 2021/06/03 19:00:18 by adylewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/header.h"
 
-int	check_args(int ac,char **av)
+int	check_args(int ac, char **av)
 {
 	int	i;
 
@@ -25,5 +25,5 @@ int	check_args(int ac,char **av)
 			return (FALSE);
 		i++;
 	}
-	return(TRUE);
+	return (TRUE);
 }
