@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adylewsk <adylewsk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 16:35:43 by adylewsk          #+#    #+#             */
-/*   Updated: 2021/06/08 11:53:05 by adylewsk         ###   ########.fr       */
+/*   Created: 2019/10/13 17:03:33 by adylewsk          #+#    #+#             */
+/*   Updated: 2021/06/03 19:09:34 by adylewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "../libft.h"
 
-int	main(int argc, char **argv)
+char	*ft_strcat(char *dest, char *src)
 {
-	argv++;
-	if (check_args(argc, argv) == FALSE)
-		exit(EXIT_FAILURE);
-	ft_printf("check args ok\n");
-	return (0);
+	int	i;
+
+	i = ft_strlen(dest);
+	while (*src)
+	{
+		dest[i] = *src;
+		i++;
+		src++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adylewsk <adylewsk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 16:35:43 by adylewsk          #+#    #+#             */
-/*   Updated: 2021/06/08 11:53:05 by adylewsk         ###   ########.fr       */
+/*   Created: 2019/10/07 17:30:14 by adylewsk          #+#    #+#             */
+/*   Updated: 2021/06/03 00:17:31 by adylewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "../libft.h"
 
-int	main(int argc, char **argv)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	argv++;
-	if (check_args(argc, argv) == FALSE)
-		exit(EXIT_FAILURE);
-	ft_printf("check args ok\n");
-	return (0);
+	char	*mem;
+
+	mem = b;
+	while (len)
+	{
+		*mem = c;
+		mem++;
+		len--;
+	}
+	return (b);
 }

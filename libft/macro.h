@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   macro.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adylewsk <adylewsk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 16:35:43 by adylewsk          #+#    #+#             */
-/*   Updated: 2021/06/08 11:53:05 by adylewsk         ###   ########.fr       */
+/*   Created: 2021/05/10 17:28:45 by adylewsk          #+#    #+#             */
+/*   Updated: 2021/06/03 19:06:28 by adylewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#ifndef MACRO_H
+# define MACRO_H
 
-int	main(int argc, char **argv)
-{
-	argv++;
-	if (check_args(argc, argv) == FALSE)
-		exit(EXIT_FAILURE);
-	ft_printf("check args ok\n");
-	return (0);
-}
+# define TRUE 1
+# define FALSE 0
+# define ERROR -1
+# define BOOL unsigned int
+# define WHITESPACES " \t\n\r\v\f"
+# define SEPARATORS ", \t\n\r\v\f"
+# define DECIMAL "0123456789"
+# define HEXADECIMAL "0123456789abcdef"
+# define HEXADECIMAL_UP "0123456789ABCDEF"
+
+#endif

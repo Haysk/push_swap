@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adylewsk <adylewsk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 16:35:43 by adylewsk          #+#    #+#             */
-/*   Updated: 2021/06/08 11:53:05 by adylewsk         ###   ########.fr       */
+/*   Created: 2019/10/13 15:10:51 by adylewsk          #+#    #+#             */
+/*   Updated: 2021/06/03 00:17:31 by adylewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "../libft.h"
 
-int	main(int argc, char **argv)
+char	*ft_strrchr(const char *s, int c)
 {
-	argv++;
-	if (check_args(argc, argv) == FALSE)
-		exit(EXIT_FAILURE);
-	ft_printf("check args ok\n");
-	return (0);
+	int		i;
+	char	*cps;
+
+	i = ft_strlen(s);
+	cps = (char *)s;
+	while (i >= 0)
+	{
+		if (cps[i] == (char)c)
+			return (cps + i);
+		i--;
+	}
+	return (NULL);
 }

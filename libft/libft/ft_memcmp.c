@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adylewsk <adylewsk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 16:35:43 by adylewsk          #+#    #+#             */
-/*   Updated: 2021/06/08 11:53:05 by adylewsk         ###   ########.fr       */
+/*   Created: 2019/10/13 15:09:05 by adylewsk          #+#    #+#             */
+/*   Updated: 2021/06/03 19:14:41 by adylewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "../libft.h"
 
-int	main(int argc, char **argv)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	argv++;
-	if (check_args(argc, argv) == FALSE)
-		exit(EXIT_FAILURE);
-	ft_printf("check args ok\n");
-	return (0);
+	unsigned char	*str1;
+	unsigned char	*str2;
+
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	if (str1 == str2 || n == 0)
+		return (FALSE);
+	while (n)
+	{
+		if (*str1 != *str2)
+			return (*str1 - *str2);
+		str1++;
+		str2++;
+		n--;
+	}
+	return (FALSE);
 }

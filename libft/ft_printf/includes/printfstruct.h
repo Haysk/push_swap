@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   printfstruct.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adylewsk <adylewsk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 16:35:43 by adylewsk          #+#    #+#             */
-/*   Updated: 2021/06/08 11:53:05 by adylewsk         ###   ########.fr       */
+/*   Created: 2020/11/19 14:11:20 by adylewsk          #+#    #+#             */
+/*   Updated: 2021/06/03 19:16:06 by adylewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#ifndef PRINTFSTRUCT_H
+# define PRINTFSTRUCT_H
 
-int	main(int argc, char **argv)
+typedef struct s_param
 {
-	argv++;
-	if (check_args(argc, argv) == FALSE)
-		exit(EXIT_FAILURE);
-	ft_printf("check args ok\n");
-	return (0);
-}
+	char	flag;
+	char	convert;
+	int		champ;
+	int		precision;
+	int		error;
+}				t_param;
+
+typedef struct s_map_base
+{
+	char	convert;
+	char	*base;
+}				t_map_base;
+
+typedef struct s_map_foncptr
+{
+	char	convert;
+	int		(*fonc_convert)(t_param, va_list);
+}				t_map_foncptr;
+
+#endif

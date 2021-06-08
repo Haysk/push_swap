@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adylewsk <adylewsk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 16:35:43 by adylewsk          #+#    #+#             */
-/*   Updated: 2021/06/08 11:53:05 by adylewsk         ###   ########.fr       */
+/*   Created: 2019/10/13 15:09:33 by adylewsk          #+#    #+#             */
+/*   Updated: 2021/06/03 19:10:37 by adylewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "../libft.h"
 
-int	main(int argc, char **argv)
+char	*ft_strdup(const char *src)
 {
-	argv++;
-	if (check_args(argc, argv) == FALSE)
-		exit(EXIT_FAILURE);
-	ft_printf("check args ok\n");
-	return (0);
+	int		i;
+	char	*cpy;
+
+	i = ft_strlen(src);
+	cpy = malloc(sizeof(char) * i + 1);
+	if (!cpy)
+		return (cpy);
+	i = 0;
+	while (src[i])
+	{
+		cpy[i] = src[i];
+		i++;
+	}
+	cpy[i] = 0;
+	return (cpy);
 }
