@@ -1,0 +1,7 @@
+push_swap
+.*
+*.o
+*.a
+build
+test
+*test*
