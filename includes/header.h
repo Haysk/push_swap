@@ -6,7 +6,7 @@
 /*   By: adylewsk <adylewsk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 19:56:11 by adylewsk          #+#    #+#             */
-/*   Updated: 2021/06/03 19:01:17 by adylewsk         ###   ########.fr       */
+/*   Updated: 2021/06/08 14:55:49 by adylewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@
 # include "../libft/libft.h"
 
 int	check_args(int ac, char **av);
+int	my_error(char *error_str, int error, int status);
 
 #endif

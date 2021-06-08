@@ -41,7 +41,7 @@ $(DIR_BUILD):
 
 $(NAME) : $(OBJS)
 	@$(CC) $(CFLAGS) $^ -o $@ -L libft -lft
-	@echo "$(Green)MAKE ->$@$(End)"
+	@echo "$(Green)MAKE\033[5C->\033[5C$@$(End)"
 
 $(LIBFT):
 	@make -C libft/

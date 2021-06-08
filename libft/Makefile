@@ -6,7 +6,7 @@
 #    By: adylewsk <adylewsk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/07 11:27:17 by adylewsk          #+#    #+#              #
-#    Updated: 2021/06/03 19:18:18 by adylewsk         ###   ########.fr        #
+#    Updated: 2021/06/08 15:42:27 by adylewsk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c\
 ft_substr.c ft_tolower.c ft_toupper.c
 
 SRCS_MY_FT = ft_intlen.c ft_max.c ft_min.c ft_pow.c ft_putchar.c ft_putstr.c\
-ft_puttab.c ft_strisdigit.c ft_tabisdigit.c ft_tablen.c 
+ft_puttab.c ft_strisdigit.c ft_tabisdigit.c ft_tablen.c ft_splits.c
 
 SRCS_PRINTF = utils/ft_itoa.c	\
 srcs/ft_check.c srcs/ft_convert_to.c srcs/ft_convert.c srcs/ft_param.c		\
