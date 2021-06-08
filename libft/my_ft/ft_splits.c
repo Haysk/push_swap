@@ -6,7 +6,7 @@
 /*   By: adylewsk <adylewsk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 15:09:26 by adylewsk          #+#    #+#             */
-/*   Updated: 2021/06/08 16:57:54 by adylewsk         ###   ########.fr       */
+/*   Updated: 2021/06/08 17:08:54 by adylewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	**ft_splits(char const *str, char *cutter)
 	save = (char *)str;
 	if (!save)
 		return (NULL);
-	tab = ft_calloc(ft_nbrword(str, cutter) + 1, sizeof(char *));
+	tab = ft_calloc(ft_nbrword(save, cutter) + 1, sizeof(char *));
 	if (!tab)
 		return (NULL);
 	if (save && *save && !ft_strchr(cutter, *save))

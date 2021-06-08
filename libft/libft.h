@@ -6,7 +6,7 @@
 /*   By: adylewsk <adylewsk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 16:46:10 by adylewsk          #+#    #+#             */
-/*   Updated: 2021/06/08 15:41:11 by adylewsk         ###   ########.fr       */
+/*   Updated: 2021/06/08 17:09:25 by adylewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *str);
 size_t	ft_tablen(char **tab);
 char	*ft_itoa(int n);
-
+char	**ft_split(char const *s, char c);
 char	**ft_splits(char const *str, char *cutter);
 char	*ft_strcat(char *dest, char *src);
 char	*ft_strchr(const char *s, int c);

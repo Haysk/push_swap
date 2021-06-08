@@ -6,11 +6,11 @@
 /*   By: adylewsk <adylewsk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 15:09:26 by adylewsk          #+#    #+#             */
-/*   Updated: 2021/06/08 17:02:49 by adylewsk         ###   ########.fr       */
+/*   Updated: 2021/06/08 17:06:20 by adylewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 static	int	ft_nbrword(char *str, char c)
 {
