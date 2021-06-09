@@ -6,13 +6,13 @@
 /*   By: adylewsk <adylewsk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 15:09:26 by adylewsk          #+#    #+#             */
-/*   Updated: 2021/06/08 17:19:22 by adylewsk         ###   ########.fr       */
+/*   Updated: 2021/06/08 17:41:37 by adylewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-static	int	ft_nbrword(char *str, char *cutter)
+static	int	ft_nbr_word(char *str, char *cutter)
 {
 	int	i;
 	int	nb_word;
@@ -29,7 +29,7 @@ static	int	ft_nbrword(char *str, char *cutter)
 	return (nb_word);
 }
 
-static	int	ft_strlenpart(char *str, char *cutter)
+static	int	ft_len_word(char *str, char *cutter)
 {
 	int	i;
 
@@ -39,15 +39,16 @@ static	int	ft_strlenpart(char *str, char *cutter)
 	return (i);
 }
 
-static	char	*ft_strduppart(char **src, char *cutter)
+
+static	char	*ft_get_word(char **src, char *cutter)
 {
 	int		i;
 	char	*cpy;
 
 	i = 0;
-	cpy = malloc(sizeof(char) * (ft_strlenpart(*src, cutter) + 1));
+	cpy = malloc(sizeof(char) * (ft_len_word(*src, cutter) + 1));
 	if (!cpy)
-		return (FALSE);
+		return (0);
 	while (**src && !ft_strchr(cutter, **src))
 	{
 		cpy[i] = **src;
@@ -66,23 +67,21 @@ char	**ft_splits(char const *str, char *cutter)
 
 	i = 0;
 	save = (char *)str;
-	if (!save)
+	if (!str)
 		return (NULL);
-	tab = ft_calloc(ft_nbrword(save, cutter) + 1, sizeof(char *));
+	tab = ft_calloc(ft_nbr_word(save, cutter) + 1, sizeof(char *));
 	if (!tab)
 		return (NULL);
-	if (save && *save && !ft_strchr(cutter, *save))
-		tab[i] = ft_strduppart(&save, cutter);
-	if (tab[i] != 0)
-		i++;
-	while (save && *save && ft_strchr(cutter, *save))
+	while (save && *save)
 	{
-		save++;
-		if (*save && !ft_strchr(cutter, *save))
+		if (!ft_strchr(cutter, *save))
 		{
-			tab[i] = ft_strduppart(&save, cutter);
+			tab[i] = ft_get_word(&save, cutter);
 			i++;
 		}
+		else
+			save++;
 	}
+	tab[i] = 0;
 	return (tab);
 }
