@@ -6,32 +6,62 @@
 /*   By: adylewsk <adylewsk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 20:19:46 by adylewsk          #+#    #+#             */
-/*   Updated: 2021/06/08 15:34:33 by adylewsk         ###   ########.fr       */
+/*   Updated: 2021/06/09 22:34:51 by adylewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/header.h"
 
-int	check_args(int ac, char **av)
+void	place(t_stack *stack)
 {
-	int	i;
-	// int	j;
-	// char	**str;
+	t_element	*tmp;
+
+	tmp = stack->first;
+	while (tmp)
+	{
+		if (stack->first->nbr >= tmp->nbr)
+			stack->first->place++;
+		else
+			tmp->place++;
+
+		tmp = tmp->next;
+	}
+}
+
+int	tab_to_stack(char **tab, t_stack *stack)
+{
+	int		i;
+	char	*end;
 
 	i = 0;
-	// j = 0;
-	if (ac < 2)
+	if (!tab)
 		return (FALSE);
-	while (av[i])
+	while (tab[i])
 	{
-		// str = ft_split(av[i], ' ');
-		// while (str[j])
-		// {
-			if (!ft_strisdigit(av[i]))
-				return (FALSE);
-		// 	j++;
-		// }
+		push_first(stack, new_elem(ft_strtoi(tab[i], &end)));
+		place(stack);
+		if (tab[i] == end)
+			return (FALSE);
 		i++;
+	}
+	return (TRUE);
+}
+
+int	args_to_stack(char **av, t_stack *stack)
+{
+	char	**tab;
+
+	while (*av)
+	{
+		tab = ft_split(*av, ' ');
+		if (!ft_tabisdigit(tab) || !tab_to_stack(tab, stack))
+		{
+			free_stack(stack);
+			ft_freetab(tab);
+			return (FALSE);
+		}
+		ft_freetab(tab);
+		av++;
 	}
 	return (TRUE);
 }
