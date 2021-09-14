@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tabisdigit.c                                    :+:      :+:    :+:   */
+/*   algo_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adylewsk <adylewsk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/11 19:00:09 by adylewsk          #+#    #+#             */
-/*   Updated: 2021/06/03 00:15:19 by adylewsk         ###   ########.fr       */
+/*   Created: 2021/09/13 15:43:38 by adylewsk          #+#    #+#             */
+/*   Updated: 2021/09/13 16:00:19 by adylewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "includes/header.h"
 
-int	ft_tabisdigit(char **tab)
+int	algo_three(t_stack stack_a, t_stack stack_b, int stack_len)
 {
-	if (tab == NULL)
-		return (FALSE);
-	while (*tab)
+	if (stack_len == 2)
 	{
-		if (!ft_strisdigit(*tab))
-			return (FALSE);
-		tab++;
+		
 	}
-	return (TRUE);
+	return (1);
 }

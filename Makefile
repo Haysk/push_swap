@@ -15,7 +15,7 @@ DIR_BUILD = build/
 INC = -I includes -I libft
 
 SRCS = main.c \
-		checker.c list.c utils.c moove.c error.c
+		setup.c list.c utils.c move.c error.c
 
 OBJS = $(addprefix $(DIR_BUILD), $(SRCS:.c=.o))
 

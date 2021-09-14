@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tabisdigit.c                                    :+:      :+:    :+:   */
+/*   close.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adylewsk <adylewsk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/11 19:00:09 by adylewsk          #+#    #+#             */
-/*   Updated: 2021/06/03 00:15:19 by adylewsk         ###   ########.fr       */
+/*   Created: 2021/09/13 16:04:14 by adylewsk          #+#    #+#             */
+/*   Updated: 2021/09/13 18:04:48 by adylewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "includes/header.h"
 
-int	ft_tabisdigit(char **tab)
+void	close(t_stack *stack_a, t_stack *stack_b)
 {
-	if (tab == NULL)
-		return (FALSE);
-	while (*tab)
-	{
-		if (!ft_strisdigit(*tab))
-			return (FALSE);
-		tab++;
-	}
-	return (TRUE);
+	free_stack(stack_a);
+	free_stack(stack_b);
 }

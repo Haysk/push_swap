@@ -6,21 +6,16 @@
 /*   By: adylewsk <adylewsk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 16:46:10 by adylewsk          #+#    #+#             */
-/*   Updated: 2021/06/09 14:53:35 by adylewsk         ###   ########.fr       */
+/*   Updated: 2021/06/28 19:10:50 by adylewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <unistd.h>
-# include <stdlib.h>
 # include <stdio.h>
-# include <string.h>
-# include <fcntl.h>
-# include <errno.h>
-# include <limits.h>
-# include <sys/types.h>
+# include <stdlib.h>
+# include <unistd.h>
 # include "macro.h"
 
 /* Len */
@@ -74,8 +69,6 @@ long	ft_pow(long nbr, long exp);
 /* Convert */
 char	*ft_itoa(int n);
 int		ft_atoi(const char *str);
-int		ft_strtoi(const char *str, char **end);
-
 
 /* Put */
 int		ft_putchar(char c);
@@ -86,6 +79,9 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_puttab(char **tab);
+
+/* Files */
+int		get_next_line(int fd, char **line);
 
 /* Alloc */
 void	ft_bzero(void *s, size_t n);
