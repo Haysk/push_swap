@@ -6,65 +6,84 @@
 /*   By: adylewsk <adylewsk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 18:47:42 by adylewsk          #+#    #+#             */
-/*   Updated: 2021/09/07 16:51:25 by adylewsk         ###   ########.fr       */
+/*   Updated: 2021/09/27 17:38:21 by adylewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/header.h"
 
-void	swap(t_stack *stack)
+void	s(t_stack *stack_a, t_stack *stack_b, char c)
 {
-	t_element *tmp;
-	
-	if (!stack->first->next)
-		return;
-	tmp = stack->first->next;
-	if (stack->first->next->next)
+	if (c == 'a' && stack_a)
 	{
-		stack->first->next->next->prev = stack->first;
-		stack->first->next = stack->first->next->next;
+		swap(stack_a);
+		ft_putstr("sa\n");
 	}
-	else
+	else if (c == 'b' && stack_b)
 	{
-		stack->last = stack->first;
-		stack->first->next = NULL;
+		swap(stack_b);
+		ft_putstr("sb\n");
 	}
-	push_first(stack, tmp);
+	else if (c == 's' && stack_a && stack_b)
+	{
+		swap(stack_a);
+		swap(stack_b);
+		ft_putstr("ss\n");
+	}
 }
 
-void	push(t_stack *stack_a, t_stack *stack_b)
+void	p(t_stack *stack_a, t_stack *stack_b, char c)
 {
-	t_element *tmp;
-	if (!stack_b->first)
-		return;
-	tmp = stack_b->first;
-	stack_b->first = stack_b->first->next;
-	if(stack_b->first)
-		stack_b->first->prev = NULL;
-	else
-		stack_b->last = NULL;
-	push_first(stack_a, tmp);
+	if (c == 'a' && stack_b)
+	{
+		push(stack_a, stack_b);
+		ft_putstr("pa\n");
+	}
+	else if (c == 'b' && stack_a)
+	{
+		push(stack_b, stack_a);
+		ft_putstr("pb\n");
+	}
 }
 
-void	rotate(t_stack *stack)
+void	r(t_stack *stack_a, t_stack *stack_b, char c)
 {
-	t_element *tmp;
-
-	if (!stack->first || !stack->first->next)
-		return;
-	tmp = stack->first;
-	stack->first = stack->first->next;
-	stack->first->prev = NULL;
-	push_last(stack, tmp);
+	if (c == 'a' && stack_a->first && stack_a->first->next)
+	{
+		rotate(stack_a);
+		ft_putstr("ra\n");
+	}
+	else if (c == 'b' && stack_b->first && stack_b->first->next)
+	{
+		rotate(stack_b);
+		ft_putstr("rb\n");
+	}
+	else if (c == 'r' && stack_a->first && stack_a->first->next
+		&& stack_b->first && stack_b->first->next)
+	{
+		rotate(stack_a);
+		rotate(stack_b);
+		ft_putstr("rr\n");
+	}
 }
 
-void	rrotate(t_stack *stack)
+void	rr(t_stack *stack_a, t_stack *stack_b, char c)
 {
-	t_element *tmp;
-	if (!stack->last || !stack->last->prev)
-		return;
-	tmp = stack->last;
-	stack->last = stack->last->prev;
-	stack->last->next = NULL;
-	push_first(stack, tmp);
+	if (c == 'a' && stack_a->first && stack_a->first->next)
+	{
+		rrotate(stack_a);
+		ft_putstr("rra\n");
+	}
+	else if (c == 'b' && stack_b->first && stack_b->first->next)
+	{
+		rrotate(stack_b);
+		ft_putstr("rrb\n");
+	}
+	else if (c == 'r' && stack_a->first && stack_a->first->next
+		&& stack_b->first && stack_b->first->next)
+	{
+		rrotate(stack_a);
+		rrotate(stack_b);
+		ft_putstr("rrr\n");
+	}
 }

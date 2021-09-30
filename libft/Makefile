@@ -6,7 +6,7 @@
 #    By: adylewsk <adylewsk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/07 11:27:17 by adylewsk          #+#    #+#              #
-#    Updated: 2021/06/28 19:29:07 by adylewsk         ###   ########.fr        #
+#    Updated: 2021/09/15 17:00:57 by adylewsk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ print/ft_print_champ.c ft_printf.c
 
 SRCS_MY_FT = ft_intlen.c ft_max.c ft_min.c ft_pow.c ft_putchar.c ft_putstr.c\
 ft_puttab.c ft_strisdigit.c ft_tabisdigit.c ft_tablen.c ft_splits.c			\
-ft_freetab.c
+ft_freetab.c ft_strtoi.c
 
 SRCS = $(addprefix $(DIR_LIB), $(SRCS_LIB:.c=.o)) \
 $(addprefix $(DIR_MY_FT), $(SRCS_MY_FT:.c=.o)) \

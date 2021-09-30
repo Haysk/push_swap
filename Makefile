@@ -3,7 +3,7 @@ NAME = push_swap
 #COMPILE
 
 CC = clang
-CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror #-g -fsanitize=address
 
 #LIBFT
 
@@ -15,7 +15,8 @@ DIR_BUILD = build/
 INC = -I includes -I libft
 
 SRCS = main.c \
-		setup.c list.c utils.c move.c error.c
+		close.c setup.c list.c utils.c operation.c move.c \
+		algo.c
 
 OBJS = $(addprefix $(DIR_BUILD), $(SRCS:.c=.o))
 
@@ -70,7 +71,7 @@ mclean:
 
 mfclean: mclean
 	@rm -rf $(NAME)
-	@echo "$(Red)$(test)REMOVE\033[5C->\033[5C$(NAME) $$? $(End)"
+	@echo "$(Red)REMOVE\033[5C->\033[5C$(NAME)$(End)"
 clean: lclean mclean
 
 fclean: lfclean mfclean

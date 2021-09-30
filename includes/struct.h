@@ -6,7 +6,7 @@
 /*   By: adylewsk <adylewsk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 17:14:55 by adylewsk          #+#    #+#             */
-/*   Updated: 2021/06/09 21:51:57 by adylewsk         ###   ########.fr       */
+/*   Updated: 2021/09/27 17:36:11 by adylewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,16 @@
 
 typedef struct s_element
 {
-	int		nbr;
-	int		place;
+	int					nbr;
+	int					place;
 	struct s_element	*prev;
 	struct s_element	*next;
-}	t_element;
+}				t_element;
 
 typedef struct s_stack
 {
 	t_element	*first;
 	t_element	*last;
-}	t_stack;
-
+}				t_stack;
 
 #endif

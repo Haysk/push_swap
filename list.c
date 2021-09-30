@@ -6,7 +6,7 @@
 /*   By: adylewsk <adylewsk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 18:35:23 by adylewsk          #+#    #+#             */
-/*   Updated: 2021/06/09 21:54:39 by adylewsk         ###   ########.fr       */
+/*   Updated: 2021/09/27 17:42:20 by adylewsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ void	init_stack(t_stack *stack)
 	stack->last = NULL;
 }
 
-t_element *new_elem(int nbr)
+t_element	*new_elem(int nbr)
 {
-	t_element	*new = malloc(sizeof(t_element));
+	t_element	*new;
+
+	new = malloc(sizeof(t_element));
 	if (!new)
 		return (NULL);
 	new->nbr = nbr;
@@ -33,7 +35,7 @@ t_element *new_elem(int nbr)
 void	push_first(t_stack *stack, t_element *elem)
 {
 	if (!elem)
-		return;
+		return ;
 	elem->next = stack->first;
 	elem->prev = NULL;
 	if (stack->first)
@@ -46,7 +48,7 @@ void	push_first(t_stack *stack, t_element *elem)
 void	push_last(t_stack *stack, t_element *elem)
 {
 	if (!elem)
-		return;
+		return ;
 	elem->next = NULL;
 	elem->prev = stack->last;
 	if (stack->last)
@@ -58,7 +60,8 @@ void	push_last(t_stack *stack, t_element *elem)
 
 void	free_stack(t_stack *stack)
 {
-	t_element *tmp;
+	t_element	*tmp;
+
 	while (stack->first)
 	{
 		tmp = stack->first->next;
